@@ -16,7 +16,7 @@ nb_features = data.video_features.shape[2]
 
 class_weight = {0: 0.05, 1: 0.95}
 training_to_all_data_ratio = 0.9
-nb_epoch = 10
+nb_epoch = 100
 batch_size = 32
 optimizer = Adam(lr=1e-4, decay=1e-2)
 
