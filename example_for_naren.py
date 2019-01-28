@@ -4,7 +4,7 @@ from models import Models
 
 
 data = DataSet()
-data.read_features(feature_size=2048, feature_path='/media/ekim-hpc/hdd1/lane_change_risk_detection/extracted_features/res_net_50_imagenet', number_of_frames=50)
+data.read_features(feature_size=2048, feature_path='/media/ekim-hpc/hdd1/lane_change_risk_detection/extracted_features/res_net_50_imagenet', number_of_frames=20)
 data.read_risk_data("LCTable.csv")
 data.convert_risk_to_one_hot(risk_threshold=0.05)
 #data = DataSet.loader("/media/ekim-hpc/hdd1/lane_change_risk_detection/saved data/dataset_resnet_features_5percent.pickle")
