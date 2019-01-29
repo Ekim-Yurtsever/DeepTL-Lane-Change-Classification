@@ -2,7 +2,7 @@ from keras.applications.resnet50 import ResNet50
 from keras.applications import ResNet50, MobileNetV2, NASNetMobile, NASNetLarge, DenseNet201, InceptionResNetV2, VGG19, Xception
 from keras.applications.resnet50 import preprocess_input, decode_predictions
 from keras.models import Model
-from dataset import DataSet
+from feature_dataset import DataSetFeature
 from keras.preprocessing import image
 import numpy as np
 #import ssl
@@ -26,7 +26,7 @@ model = Model(inputs=base_model.input, outputs=base_model.get_layer('avg_pool').
 feature_destination_path = '/media/ekim-hpc/hdd1/lane_change_risk_detection/extracted_features/InceptionResNetV2'
 image_path = '/media/ekim-hpc/hdd1/data/from Naren/risk_prediction/dataPreparation/lane_change_images'
 
-dataset = DataSet()
+dataset = DataSetFeature()
 dataset.model = model
 dataset.iterate_folder(main_foldername=image_path, save_main_foldername=feature_destination_path)
 
