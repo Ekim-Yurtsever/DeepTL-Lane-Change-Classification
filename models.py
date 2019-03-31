@@ -33,6 +33,7 @@ class Models:
         self.history = []
         self.last_Mpercent_epoch_val_loss = []
         self.m_fold_cross_val_results = []
+        self.flops = []
 
     def build_loss_history(self, X_train, y_train, X_test, y_test):
 
@@ -78,14 +79,13 @@ class Models:
         self.history = LossHistory(X_train, y_train, X_test, y_test)
 
     def get_flops(self):
-        run_meta = tf.RunMetadata()
-        opts = tf.profiler.ProfileOptionBuilder.float_operation()
 
-        # We use the Keras session graph in the call to the profiler.
-        flops = tf.profiler.profile(graph=K.get_session().graph,
-                                    run_meta=run_meta, cmd='op', options=opts)
+        run_meta_data = tf.RunMetadata()
+        flop_opts = tf.profiler.ProfileOptionBuilder.float_operation()
 
-        return flops.total_float_ops
+        conv_flops = tf.profiler.profile(graph=K.get_session().graph, run_meta=run_meta_data, cmd='op', options=flop_opts)
+        self.flops = conv_flops.total_float_ops
+        print(self.flops)
 
     def train_model(self, X_train, y_train, X_test, y_test, print_option=0, verbose=2):
 
