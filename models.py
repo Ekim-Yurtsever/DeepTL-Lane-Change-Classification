@@ -9,6 +9,8 @@ from keras.layers import Dense, GRU, Convolution2D, MaxPooling2D, Flatten, Dropo
 from keras.models import Sequential
 from keras.layers.wrappers import TimeDistributed
 from keras.optimizers import Adam
+import tensorflow as tf
+import keras.backend as K
 
 
 from sklearn.metrics import roc_auc_score, f1_score
@@ -74,6 +76,16 @@ class Models:
                 self.f1_val.append(f1_score(self.val_y[:, 1], self.make_prediction(y_pred_val[:, 1])))
 
         self.history = LossHistory(X_train, y_train, X_test, y_test)
+
+    def get_flops(self):
+        run_meta = tf.RunMetadata()
+        opts = tf.profiler.ProfileOptionBuilder.float_operation()
+
+        # We use the Keras session graph in the call to the profiler.
+        flops = tf.profiler.profile(graph=K.get_session().graph,
+                                    run_meta=run_meta, cmd='op', options=opts)
+
+        return flops.total_float_ops
 
     def train_model(self, X_train, y_train, X_test, y_test, print_option=0, verbose=2):
 

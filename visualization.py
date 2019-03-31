@@ -110,12 +110,14 @@ visualizer.model = ResNet50(weights='imagenet')
 
 
 
-INPUT_DIR = '/Users/ekimmac/Dropbox/PhD/projects/maskRCNN_detection/test_images/1/'
-OUTPUT_DIR = '/Users/ekimmac/Dropbox/PhD/projects/git_projects/lane_change_classification/DeepTL-Lane-Change-Classification/processed_images/'
+INPUT_DIR = '/Users/ekimmac/Dropbox/PhD/projects/maskRCNN_detection/test_images/'
+OUTPUT_DIR = '/Users/ekimmac/Dropbox/PhD/projects/git_projects/lane_change_classification/DeepTL-Lane-Change-Classification/processed_images/conv_outputs/last_conv/'
 
 visualizer.iterate_folder_function_wrapper(INPUT_DIR=INPUT_DIR, OUTPUT_DIR=OUTPUT_DIR, filter_id=0, layer_name='activation_49')
 
-visualizer.visualize_activation_with_image(img_path, filter_id=0, layer_name='conv1')
+#visualizer.iterate_folder_function_wrapper(INPUT_DIR=INPUT_DIR, OUTPUT_DIR=OUTPUT_DIR, filter_id=0, layer_name='activation_49')
+
+#visualizer.visualize_activation_with_image(img_path, filter_id=0, layer_name='conv1')
 # 1st conv = 'conv1'
 # res4f_branch2c
 # 'res3d_branch2c'
