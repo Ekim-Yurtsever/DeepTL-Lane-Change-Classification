@@ -10,20 +10,19 @@ import numpy as np
 #ssl._create_default_https_context = ssl._create_unverified_context
 
 
-# base_model = ResNet50(weights='imagenet')
-# model = Model(inputs=base_model.input, outputs=base_model.get_layer('flatten_1').output)
+base_model = ResNet50(weights='imagenet')
+model = Model(inputs=base_model.input, outputs=base_model.get_layer('flatten_1').output)
 #
 # base_model = MobileNetV2(weights='imagenet')
 # model = Model(inputs=base_model.input, outputs=base_model.get_layer('global_average_pooling2d_1').output)
 #
 # base_model = NASNetLarge(weights='imagenet')
 # model = Model(inputs=base_model.input, outputs=base_model.get_layer('global_average_pooling2d_1').output)
+# base_model = InceptionResNetV2(weights='imagenet')
+# model = Model(inputs=base_model.input, outputs=base_model.get_layer('avg_pool').output)
 
-base_model = InceptionResNetV2(weights='imagenet')
-model = Model(inputs=base_model.input, outputs=base_model.get_layer('avg_pool').output)
 
-
-feature_destination_path = '/media/ekim-hpc/hdd1/lane_change_risk_detection/extracted_features/InceptionResNetV2'
+feature_destination_path = '/media/ekim-hpc/hdd1/lane_change_risk_detection/extracted_features/test1'
 image_path = '/media/ekim-hpc/hdd1/data/from Naren/risk_prediction/dataPreparation/lane_change_images'
 
 dataset = DataSetFeature()
