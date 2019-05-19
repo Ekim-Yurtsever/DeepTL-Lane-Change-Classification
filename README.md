@@ -1,7 +1,7 @@
 # DeepTL-Lane-Change-Classification
 Infers the risk level of lane change video clips. The related paper is submitted to IEEE ITSC 2019. [Mask R-CNN implementation by Matterport](https://github.com/matterport/Mask_RCNN) is utilized for the segmentation part in this project.
 
-## Feautes:
+## Features: 
 * A novel deep spatiotemporal framework with segmentation mask transfer for risky action detection in short lane change video clips
 * using solely a camera for the task
 * extensive comparison of state-of-the-art deep backbone models.
