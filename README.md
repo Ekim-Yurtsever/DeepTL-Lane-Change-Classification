@@ -18,7 +18,34 @@ Here are two examples. The left lane change is classified as safe and the right 
 ## Installation:
 
 
-## Prediction & training examples:
+## Prediction example:
+
+1- Extracts the contents of lc_samples_50frames.tar.gz in data/input. The folder structure after extraction should look like the following:
+
+    .
+    ├── data
+    │   ├── input 
+    │   │   ├── 1                                    # The first lane change sequence
+    │   │   ├── 2                                    # The second lane change sequence
+    │   ├── extracted_features                       # 
+    ├── example_gifs                    
+    ├── lane_change_risk_detection                   # 
+    ├── resnet_lstm.h5                               # The trained model. Weights and architecture 
+    ├── sample_prediction_resnet_lstm.py            # This script infers the risk level of the lane changes in data/input/..
+    ├── ...
+ 
+2- Run sample_prediction_resnet_lstm.py:
+
+This will infer the risk level of all lane changes in the folder  data/input/.. and print the result. For the provided sample lane change sequences the result should look like
+
+      
+      safe | dangerous 
+      [[0.9169345  0.08306556]
+      [0.13948527 0.8605147 ]]
+
+This means the first lane change is classified as safe (0.91) and the second lane change is classified as dangerous (0.86).
+
+3- If you want to use the trained model to infer the risk level of your own lane change data, simply add more lane change folders under data/input/.. with numerical foldernames such as 3, 4, .... The sample_prediction_resnet_lstm.py will infer the risk level of all lane changes in the input folder.
 
 
 ## Credits:
