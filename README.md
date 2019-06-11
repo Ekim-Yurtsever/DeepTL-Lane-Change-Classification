@@ -21,7 +21,7 @@ Here are two examples. The left lane change is classified as safe and the right 
 
 ## Prediction example:
 
-1- Extracts the contents of c_samples_50frames.tar.gz in data/input. The folder structure after extraction should look like the following:
+1- Extracts the contents of lc_samples_50frames.tar.gz in data/input. The folder structure after extraction should look like the following:
 
     .
     ├── data
