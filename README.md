@@ -62,4 +62,5 @@ This means the first lane change is classified as safe (0.91) and the second lan
 ## Coming soon:
 
 -MaskRCNN segmentation mask transfer!
+
 -The full release will be available soon. Stay tuned for updates!
