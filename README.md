@@ -21,7 +21,7 @@ Here are two examples. The left lane change is classified as safe and the right 
 
 ## Prediction example:
 
-1- Extracts the contents of lc_samples_50frames.tar.gz in data/input. The folder structure after extraction should look like the following:
+1- Extract the contents of lc_samples_50frames.tar.gz in data/input. The folder structure after extraction should look like the following:
 
     .
     ├── data
@@ -30,7 +30,7 @@ Here are two examples. The left lane change is classified as safe and the right 
     │   │   │   ├── 260_7308.jpg                     # First frame of LC1
     │   │   │   ├── 260_7317.jpg                     # Second frame of LC1
     │   │   │   ├── ...      
-    │   │   │   ├── 260_7317.jpg                     # 50th frame of LC1. The original footage was captured with 30 fps. However, we can only share the downsampled version here :(. Each lane chagne sequecne was downsampled to have 50 frames in total.
+    │   │   │   ├── 260_7317.jpg                     # 50th frame of LC1. The original footage was captured with 30 fps. However, we can only share the downsampled version here :(. Each lane change sequence was downsampled to have 50 frames in total.
     │   │   ├── 2                                    # The second lane change sequence
     │   │   │   ├── 697_14899.jpg                    # First frame of LC2
     │   │   │   ├── ...                
