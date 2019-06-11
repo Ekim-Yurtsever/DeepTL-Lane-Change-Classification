@@ -26,12 +26,18 @@ Here are two examples. The left lane change is classified as safe and the right 
     ├── data
     │   ├── input 
     │   │   ├── 1                                    # The first lane change sequence
+    │   │   │   ├── 260_7308.jpg                     # First frame of LC1
+    │   │   │   ├── 260_7317.jpg                     # Second frame of LC1
+    │   │   │   ├── ...      
+    │   │   │   ├── 260_7317.jpg                     # 50th frame of LC1. The original footage was captured with 30 fps. However, we can only share the downsampled version here :(. Each lane chagne sequecne was downsampled to have 50 frames in total.
     │   │   ├── 2                                    # The second lane change sequence
+    │   │   │   ├── 697_14899.jpg                    # First frame of LC2
+    │   │   │   ├── ...                
     │   ├── extracted_features                       # 
     ├── example_gifs                    
     ├── lane_change_risk_detection                   # 
     ├── resnet_lstm.h5                               # The trained model. Weights and architecture 
-    ├── sample_prediction_resnet_lstm.py            # This script infers the risk level of the lane changes in data/input/..
+    ├── sample_prediction_resnet_lstm.py             # This script infers the risk level of the lane changes in data/input/..
     ├── ...
  
 2- Run sample_prediction_resnet_lstm.py:
