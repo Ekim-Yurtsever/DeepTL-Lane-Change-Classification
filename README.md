@@ -1,11 +1,12 @@
 # DeepTL-Lane-Change-Classification
-Infers the risk level of lane change video clips. The related paper is submitted to IEEE ITSC 2019. 
+Infers the risk level of lane change video clips. Utilizes transfer learning (TL). The related paper is submitted to IEEE ITSC 2019. 
 
 
 ## Features: 
 * A novel deep spatiotemporal framework for risky action detection in short lane change video clips
 * using solely a camera for the task
-* Two versions available with trained weights! : ResNet50 + LSTM and MaskRCNN backbone + CNN + LSTM.
+* Two versions available with trained weights! : ResNet50 (TL) + LSTM and MaskRCNN (TL) + CNN + LSTM.
+* Two lane change video samples are provided in data/input/lc_samples_50frames.tar.gz 
 
 
 ## Examples:
@@ -20,7 +21,7 @@ Here are two examples. The left lane change is classified as safe and the right 
 
 ## Prediction example:
 
-1- Extracts the contents of lc_samples_50frames.tar.gz in data/input. The folder structure after extraction should look like the following:
+1- Extracts the contents of c_samples_50frames.tar.gz in data/input. The folder structure after extraction should look like the following:
 
     .
     ├── data
