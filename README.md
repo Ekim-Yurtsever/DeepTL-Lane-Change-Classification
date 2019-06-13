@@ -5,7 +5,7 @@ Infers the risk level of lane change video clips. Utilizes transfer learning (TL
 ## Features: 
 * A novel deep spatiotemporal framework for risky action detection in short lane change video clips
 * using solely a camera for the task
-* Two versions available with trained weights! : ResNet50 (TL) + LSTM and MaskRCNN (TL) + CNN + LSTM.
+* Two versions are available with trained weights! : ResNet50 (TL) + LSTM and MaskRCNN (TL) + CNN + LSTM.
 * Two lane change video samples are provided in data/input/lc_samples_50frames.tar.gz 
 
 
