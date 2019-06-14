@@ -1,5 +1,5 @@
 # DeepTL-Lane-Change-Classification
-Infers the risk level of lane change video clips. Utilizes transfer learning (TL). The related paper is submitted to IEEE ITSC 2019. Preprint of the article is availabe at: https://arxiv.org/abs/1906.02859 .
+Infers the risk level of lane change video clips. Utilizes transfer learning (TL). The related paper is submitted to IEEE ITSC 2019. The preprint of the article is available at https://arxiv.org/abs/1906.02859 
 
 
 ## Features: 
