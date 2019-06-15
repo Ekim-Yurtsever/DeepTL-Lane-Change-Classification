@@ -44,7 +44,7 @@ Here are two examples. The left lane change is classified as safe and the right 
  
 2- Run test/sample_prediction_resnet_lstm.py:
 
-This will infer the risk level of all lane changes in the folder  data/input/.. and print the result. This script uses the ResNET backbone for risk inference. This is faster than MaskRCNN based semantic mask transfer backbone, but have lower performance. For the provided sample lane change sequences the result should look like the following:
+This will infer the risk level of all lane changes in the folder  data/input/.. and print the result. This script uses the ResNET backbone for risk inference. This is faster than MaskRCNN based semantic mask transfer backbone, but has lower performance. For the provided sample lane change sequences the result should look like the following:
 
       
       safe | dangerous 
