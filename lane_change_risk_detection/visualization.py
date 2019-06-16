@@ -1,12 +1,12 @@
 import numpy as np
 from keras.preprocessing import image
 from keras.applications.resnet50 import preprocess_input
-from keras.applications import ResNet50, MobileNetV2, NASNetMobile, NASNetLarge, DenseNet201, InceptionResNetV2, VGG19, Xception
+from keras.applications import ResNet50
 from keras.models import Model
 from matplotlib import pyplot as plt
 import os
 
-
+# todo
 # With the trained model do the following:
 # 1- Given a single image and intermediate CON layer, create an activation image of that CONV layer
 # 2- Given a folder and intermediate CONV layer, create activation images for every image in the folder
@@ -16,12 +16,10 @@ import os
 # --------------------------------------
 # 5-Given an image and intermediate CONV layer id, extrapolate the activation of a CONV filter over the image and plot
 # (i.e plot attention)
-
-# https://github.com/raghakot/keras-vis
-# Check this^ repo for:
 # Activation maximization
 # Saliency maps
 # Class activation maps
+
 
 class Visualization:
 
@@ -81,44 +79,3 @@ class Visualization:
                     self.visualize_activation_with_image(CURRENT_INPUT_DIR + filename, filter_id=filter_id, layer_name=layer_name,
                                                          save_option=1, save_path=CURRENT_OUTPUT_DIR + filename)
                     #function(**kwargs)
-
-
-# img_path = '/Users/ekimmac/Dropbox/PhD/projects/maskRCNN_detection/test_images/1/1_1096.jpg'
-# # img_path = '/Users/ekimmac/Dropbox/PhD/projects/maskRCNN_detection/test_images/474/474_11128.jpg'
-#
-#
-# base_model = ResNet50(weights='imagenet')
-# model = Model(inputs=base_model.input, outputs=base_model.get_layer('activation_49').output)
-# #1st conv = 'conv1'
-# #res4f_branch2c
-# # 'res3d_branch2c'
-# # activation_49
-# img = image.load_img(img_path, target_size=(224, 224))
-# x = image.img_to_array(img)
-# x = np.expand_dims(x, axis=0)
-# x = preprocess_input(x)
-#
-# activation_output = model.predict(x)
-# plt.matshow(activation_output[0, :, :, 0], cmap='viridis')
-
-# -------------------------------------------------------
-img_path = '/Users/ekimmac/Dropbox/PhD/projects/maskRCNN_detection/test_images/1/1_1096.jpg'
-visualizer = Visualization()
-visualizer.model = ResNet50(weights='imagenet')
-
-
-
-
-
-INPUT_DIR = '/Users/ekimmac/Dropbox/PhD/projects/maskRCNN_detection/test_images/'
-OUTPUT_DIR = '/Users/ekimmac/Dropbox/PhD/projects/git_projects/lane_change_classification/DeepTL-Lane-Change-Classification/processed_images/conv_outputs/last_conv/'
-
-visualizer.iterate_folder_function_wrapper(INPUT_DIR=INPUT_DIR, OUTPUT_DIR=OUTPUT_DIR, filter_id=0, layer_name='activation_49')
-
-#visualizer.iterate_folder_function_wrapper(INPUT_DIR=INPUT_DIR, OUTPUT_DIR=OUTPUT_DIR, filter_id=0, layer_name='activation_49')
-
-#visualizer.visualize_activation_with_image(img_path, filter_id=0, layer_name='conv1')
-# 1st conv = 'conv1'
-# res4f_branch2c
-# 'res3d_branch2c'
-# activation_49

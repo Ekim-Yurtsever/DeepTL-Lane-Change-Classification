@@ -184,22 +184,11 @@ class Models:
         c2 = 1 - c1
         self.class_weights = {0: c2, 1: c1}
 
-
-    # Build or load a neural network model. Works with Keras implementations.
-    def load_model_json(self, load_path='default_path'):
-        # todo
-        self.model = []
-
-    def save_model_json(self, save_path='default_path'):
-        # todo
-        self.model = []
-
     def build_transfer_LSTM_model(self, input_shape, optimizer=Adam(lr=1e-6, decay=1e-5)):
 
         model = Sequential()
 
         model.add(GRU(100, return_sequences=False, name="lstm_layer", input_shape=input_shape))
-        #model.add(Dense(32, activation='relu'))
         model.add(Dense(2, activation='softmax', kernel_initializer='ones'))
 
         model.compile(loss='categorical_crossentropy', optimizer=optimizer)
