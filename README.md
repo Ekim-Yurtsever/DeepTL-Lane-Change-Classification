@@ -64,7 +64,7 @@ This will do the same thing with the MaskRCNN backbone. Also, the masked images 
 4- If you want to use the trained model to infer the risk level of your own lane change data, simply add more lane change folders under data/input/.. with numerical foldernames such as 3, 4, .... The sample_prediction_resnet_lstm.py will infer the risk level of all lane changes in the input folder.
 
 ## Architecture
-The architecture of the model is shown below. Please check our [paper](https://arxiv.org/abs/1906.02859) for details.
+The architecture of the model is shown below. SMT stands for "Semantic Mask Transfer." Please check our [paper](https://arxiv.org/abs/1906.02859) for details.
 
 <img src="example_gifs/architectures2.png" title="Model architecture"> 
 
