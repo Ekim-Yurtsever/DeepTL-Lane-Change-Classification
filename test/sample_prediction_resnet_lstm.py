@@ -16,8 +16,13 @@ feature_dataset = DataSetFeature()
 feature_dataset.model = backbone_model
 feature_dataset.iterate_folder(main_foldername=image_path, save_main_foldername=feature_destination_path)
 
+data2 = DataSet()
+data2.read_features(feature_size=2048, feature_path=feature_destination_path, number_of_frames=50)
+
 data = DataSet()
-data.read_features(feature_size=2048, feature_path=feature_destination_path, number_of_frames=50)
+data.model = backbone_model
+data.extract_features(image_path, option='fixed frame amount', number_of_frames=50)
+
 
 model = load_model('resnet_lstm.h5')
 print('  safe | dangerous \n', model.predict_proba(data.video_features))

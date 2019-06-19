@@ -12,8 +12,8 @@ class DataSetFeature:
         self.features = []
         self.model = []
 
-    def extract_feature(self, img_path):
-        img = image.load_img(img_path, target_size=(224, 224))
+    def extract_feature(self, img_path, target_size=(224, 224)):
+        img = image.load_img(img_path, target_size=target_size)
         x = image.img_to_array(img)
         x = np.expand_dims(x, axis=0)
         x = preprocess_input(x)
