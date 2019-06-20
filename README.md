@@ -17,7 +17,7 @@ Here are two examples. The left lane change is classified as safe and the right 
 <img src="example_gifs/260.gif" title="Safe Lane Change Example" width="400" hspace="10"> <img src="example_gifs/697.gif" title="Risk Lane Change Example" width="400" hspace="10"> 
 
 ## Installation:
-
+    $git clone https://github.com/Ekim-Yurtsever/DeepTL-Lane-Change-Classification.git
     $cd DeepTL-Lane-Change-Classification/
     $pip install -r requirements.txt
 
