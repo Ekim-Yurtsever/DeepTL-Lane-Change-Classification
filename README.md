@@ -18,6 +18,8 @@ Here are two examples. The left lane change is classified as safe and the right 
 
 ## Installation:
 
+    $cd DeepTL-Lane-Change-Classification/
+    $pip install -r requirements.txt
 
 ## Prediction example:
 
@@ -52,6 +54,40 @@ This will infer the risk level of all lane changes in the folder  data/input/.. 
       [0.13948527 0.8605147 ]]
 
 This means the first lane change is classified as safe (0.91) and the second lane change is classified as dangerous (0.86).
+
+PLEASE NOTE: If you use different versions of keras or tensorflow-GPU, the trained models will either not work or give false results!! The trained models work only with the specific tensorflow-gpu version which I used to train with our data (the data is not open access)! I will add cpu models later. IF YOU DONT GET THE RESULT MENTIONED ABOVE PLEASE CHECK DEPENDINCIES. Here are the requirments:
+
+### Requirments:
+ 
+    absl-py==0.7.1
+    astor==0.8.0
+    gast==0.2.2
+    google-pasta==0.1.7
+    grpcio==1.21.1
+    h5py==2.9.0
+    Keras==2.2.2
+    Keras-Applications==1.0.4
+    Keras-Preprocessing==1.0.2
+    Markdown==3.1.1
+    numpy==1.14.5
+    opencv-python==4.1.0.25
+    pandas==0.24.2
+    Pillow==6.0.0
+    pkg-resources==0.0.0
+    protobuf==3.8.0
+    python-dateutil==2.8.0
+    pytz==2019.1
+    PyYAML==5.1.1
+    scipy==1.3.0
+    six==1.12.0
+    tensorboard==1.10.0
+    tensorflow-estimator==1.14.0
+    tensorflow-gpu==1.10.1
+    termcolor==1.1.0
+    tqdm==4.32.2
+    Werkzeug==0.15.4
+    wrapt==1.11.2
+
 
 3- Run test/sample_prediction_maskRCNN_lstm.py:
 
