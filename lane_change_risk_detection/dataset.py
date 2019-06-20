@@ -2,6 +2,8 @@ import pickle
 import cv2
 import os
 import numpy as np
+from keras.preprocessing import image
+from keras.applications.resnet50 import preprocess_input
 from tqdm import tqdm
 import pandas as pd
 
@@ -13,11 +15,12 @@ class DataSet:
         self.dataset = {}
         self.video = []
         self.image_seq = []
-        self.risk_scores = []
+        self.risk_scres = []
         self.risk_one_hot = []
         self.risk_binary = []
         self.video_features = []
         self.feature_dataset = []
+        self.model = []  # feature extractor
 
         self.can_seq = []
         self.image_parsed = []
@@ -59,6 +62,27 @@ class DataSet:
                 index += 1
 
         return images
+
+    def extract_features(self, img_path, feature_size=2048, option='fixed frame amount', number_of_frames=20,
+                         max_number_of_frames=500):
+
+        foldernames = [f for f in os.listdir(img_path) if f.isnumeric() and not f.startswith('.')]
+        int_foldernames = [int(f) for f in os.listdir(img_path) if f.isnumeric() and not f.startswith('.')]
+
+        if option == 'fixed frame amount':
+            self.video_features = np.zeros([max(int_foldernames), number_of_frames, feature_size])
+        elif option == 'all frames':
+            self.video_features = np.zeros([max(int_foldernames), max_number_of_frames, feature_size])
+            # shape: (n_vidoes, n_frames, im_height, im_width, channel)
+
+        for foldername in tqdm(foldernames):
+            if foldername.isnumeric:
+                self.image_seq = self.load_images_for_keras(img_path + "/" + foldername)
+                if not len(self.image_seq) == 0:
+                    if option == 'fixed frame amount':
+                        self.video_features[int(foldername)-1, :, :] = self._read_video_helper(number_of_frames=number_of_frames)
+                    elif option == 'all frames':
+                        self.video_features[int(foldername)-1, 0:len(self.image_seq), :] = self.image_seq
 
     def read_features(self, feature_path, feature_size=2048, option='fixed frame amount', number_of_frames=20,
                       max_number_of_frames=500):
@@ -164,3 +188,22 @@ class DataSet:
                 images.append(img)
 
         return images
+
+    def load_images_for_keras(self, img_path, target_size=(224, 224)):
+
+        features = []
+        filenames = sorted(os.listdir(img_path))
+
+        for filename in filenames:
+
+            img = image.load_img(os.path.join(img_path, filename), target_size=target_size)
+            img = image.img_to_array(img)
+            img = np.expand_dims(img, axis=0)
+            img = preprocess_input(img)
+
+            feature = self.model.predict(img)
+
+            if img is not None:
+                features.append(feature)
+
+        return features
