@@ -41,7 +41,7 @@ class DataSet:
             self.video = np.zeros([len(foldernames), max_number_of_frames, self.image_seq[000].shape[0],
                                    self.image_seq[000].shape[1], self.image_seq[000].shape[2]])
             # shape: (n_vidoes, n_frames, im_height, im_width, channel)
-
+        # todo convert this to a wrapper
         for foldername in tqdm(foldernames):
             if foldername.isnumeric:
                 self.read_image_data(data_dir + "/" + foldername, scaling=scaling, scale_x=scale_x, scale_y=scale_y)
@@ -74,7 +74,7 @@ class DataSet:
         elif option == 'all frames':
             self.video_features = np.zeros([max(int_foldernames), max_number_of_frames, feature_size])
             # shape: (n_vidoes, n_frames, im_height, im_width, channel)
-
+        # todo convert this to a wrapper
         for foldername in tqdm(foldernames):
             if foldername.isnumeric:
                 self.image_seq = self.load_images_for_keras(img_path + "/" + foldername)
@@ -102,7 +102,7 @@ class DataSet:
 
                 for counter, filename in enumerate(filenames):
                     feature_file = feature_path + '/' + foldername + '/' + filename
-
+                    # todo convert this to a wrapper
                     if option == 'fixed frame amount':
                         modulo = int(len(filenames) / number_of_frames)
                         if counter % modulo == 0 and index < number_of_frames:

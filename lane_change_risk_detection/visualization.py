@@ -1,7 +1,6 @@
 import numpy as np
 from keras.preprocessing import image
 from keras.applications.resnet50 import preprocess_input
-from keras.applications import ResNet50
 from keras.models import Model
 from matplotlib import pyplot as plt
 import os
@@ -62,7 +61,7 @@ class Visualization:
         self.feature = []
 
     def iterate_folder_function_wrapper(self, INPUT_DIR, OUTPUT_DIR, filter_id=0, layer_name='activation_49'):  #convert this to a wrapper
-        # todo #convert this to a wrapper
+        # todo convert this to a wrapper
 
         foldernames = [f for f in os.listdir(INPUT_DIR) if f.isnumeric() and not f.startswith('.')]
         foldernames.sort()
