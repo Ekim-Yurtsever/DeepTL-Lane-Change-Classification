@@ -18,10 +18,14 @@ Here are the two examples. The left lane change is classified as safe and the ri
 <img src="example_gifs/260.gif" title="Safe Lane Change Example" width="400" hspace="10"> <img src="example_gifs/697.gif" title="Risk Lane Change Example" width="400" hspace="10"> 
 
 ## Installation:
+
+1- Clone the repo and install the  dependencies:
+
     $git clone https://github.com/Ekim-Yurtsever/DeepTL-Lane-Change-Classification.git
     $cd DeepTL-Lane-Change-Classification/
     $pip install -r requirements.txt
-    
+ 
+ 2- [Only for the MaskRCNN based model] Download MaskRCNN weights from https://www.dropbox.com/s/n81pagybkj8p5w1/mask_rcnn_coco.h5?dl=0 and move it to /test
    
 PLEASE NOTE: Install in a fresh python 3.6 environment with the above commands. If you use different versions of keras or tensorflow-GPU, the trained models will either not work or give false results!! The trained models will only work with the specific tensorflow-gpu version that I used to train the networks with our data (the data is not open access). I will add CPU models later. If you don't get the results mentioned below, please check the dependencies and compare them to the requirements.txt file.
 
