@@ -25,7 +25,9 @@ Here are the two examples. The left lane change is classified as safe and the ri
     $cd DeepTL-Lane-Change-Classification/
     $pip install -r requirements.txt
  
- 2- [Only for the MaskRCNN based model] Download MaskRCNN weights from https://www.dropbox.com/s/n81pagybkj8p5w1/mask_rcnn_coco.h5?dl=0 and move it to /test
+ 2- [Only for the MaskRCNN based model] Download MaskRCNN weights* from https://www.dropbox.com/s/n81pagybkj8p5w1/mask_rcnn_coco.h5?dl=0 and move it to /test . 
+ 
+ _*This model and weights were originally obtained from [Mask R-CNN implementation by Matterport](https://github.com/matterport/Mask_RCNN)._
    
 PLEASE NOTE: Install in a fresh python 3.6 environment with the above commands. If you use different versions of keras or tensorflow-GPU, the trained models will either not work or give false results!! The trained models will only work with the specific tensorflow-gpu version that I used to train the networks with our data (the data is not open access). I will add CPU models later. If you don't get the results mentioned below, please check the dependencies and compare them to the requirements.txt file.
 
@@ -90,7 +92,7 @@ The architecture of the model is shown below. SMT stands for "Semantic Mask Tran
 
 ## Credits:
 
-[Mask R-CNN implementation by Matterport](https://github.com/matterport/Mask_RCNN) is utilized for the segmentation part of this project.
+[Mask R-CNN implementation by Matterport](https://github.com/matterport/Mask_RCNN) is utilized for the segmentation part of this project under /Mask_RCNN
 
 ## Coming soon:
 
