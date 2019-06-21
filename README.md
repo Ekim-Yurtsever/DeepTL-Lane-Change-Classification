@@ -55,7 +55,7 @@ This will infer the risk level of all lane changes in the folder  data/input/.. 
 
 This means the first lane change is classified as safe (0.91) and the second lane change is classified as dangerous (0.86).
 
-PLEASE NOTE: If you use different versions of keras or tensorflow-GPU, the trained models will either not work or give false results!! The trained models work only with the specific tensorflow-gpu version which I used to train with our data (the data is not open access)! I will add cpu models later. IF YOU DONT GET THE RESULT MENTIONED ABOVE PLEASE CHECK DEPENDINCIES. Here are the requirments:
+PLEASE NOTE: If you use different versions of keras or tensorflow-GPU, the trained models will either not work or give false results!! The trained models will only work with the specific tensorflow-gpu version that I used to train the networks with our data (the data is not open access)! I will add cpu models later. IF YOU DONT GET THE RESULT MENTIONED ABOVE PLEASE CHECK DEPENDENCIES. Here are the requirements:
 
 ### Requirments:
  
@@ -93,9 +93,9 @@ PLEASE NOTE: If you use different versions of keras or tensorflow-GPU, the train
 
 This will do the same thing with the MaskRCNN backbone. Also, the masked images will be saved to /data/masked_images . This method has higher performance but it is slower. The risk inference result should look like the following:
 
-    safe | dangerous 
-    [[0.94456106 0.05543892]
-    [0.07597142 0.92402864]]
+      safe | dangerous 
+      [[0.9703818  0.02961819]
+      [0.06648535 0.9335146 ]]
 
 4- If you want to use the trained model to infer the risk level of your own lane change data, simply add more lane change folders under data/input/.. with numerical foldernames such as 3, 4, .... The sample_prediction_resnet_lstm.py will infer the risk level of all lane changes in the input folder.
 
