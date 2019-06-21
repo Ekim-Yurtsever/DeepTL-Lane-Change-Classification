@@ -8,6 +8,7 @@ Infers the risk level of lane change video clips. Utilizes deep transfer learnin
 * Two versions are available with trained weights! : ResNet50 (TL) + LSTM and MaskRCNN (TL) + CNN + LSTM.
 * Two lane change video samples are provided in data/input/lc_samples_50frames.tar.gz 
 * Currently only works with a GPU. CPU models will be added in the future.
+* Implemented in Keras
 
 
 ## Examples:
