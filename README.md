@@ -23,7 +23,7 @@ Here are the two examples. The left lane change is classified as safe and the ri
     $pip install -r requirements.txt
     
    
-PLEASE NOTE: Install in a fresh python 3.6 environment with the above commands. If you use different versions of keras or tensorflow-GPU, the trained models will either not work or give false results!! The trained models will only work with the specific tensorflow-gpu version that I used to train the networks with our data (the data is not open access). I will add CPU models later. If you don't get the aformentioned result, please check the dependencies and compare them to the requirements.txt file.
+PLEASE NOTE: Install in a fresh python 3.6 environment with the above commands. If you use different versions of keras or tensorflow-GPU, the trained models will either not work or give false results!! The trained models will only work with the specific tensorflow-gpu version that I used to train the networks with our data (the data is not open access). I will add CPU models later. If you don't get the results mentioned below, please check the dependencies and compare them to the requirements.txt file.
 
 ## Hardware requirements
 
@@ -32,6 +32,8 @@ The following GPU-enabled devices are supported:
     NVIDIA® GPU card with CUDA® Compute Capability 3.5 or higher. See the list of CUDA-enabled GPU cards.
 
 Please check https://www.tensorflow.org/install/gpu for installing the neccessary drivers.
+
+I used a GeForce GTX 1080 Ti to train the models.
 
 ## Prediction example:
 
