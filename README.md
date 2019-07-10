@@ -1,13 +1,12 @@
 # DeepTL-Lane-Change-Classification
-Infers the risk level of lane change video clips. Utilizes deep transfer learning (TL). The related paper is submitted to IEEE ITSC 2019. The preprint of the article is available at https://arxiv.org/abs/1906.02859 
+Infers the risk level of lane change video clips. Utilizes deep transfer learning (TL). The related paper is accepted for publication in IEEE ITSC 2019. The preprint of the article is available at https://arxiv.org/abs/1906.02859 
 
 
 ## Features: 
-* A novel deep spatiotemporal framework for risky action detection in short lane change video clips
+* A novel deep learning based driving risk assessment framework
 * Using only a monocular camera for the task
 * Two versions are available with trained weights! : ResNet50 (TL) + LSTM and MaskRCNN (TL) + CNN + LSTM.
 * Two lane change video samples are provided in data/input/lc_samples_50frames.tar.gz 
-* Currently only works with a GPU. CPU models will be added in the future.
 * Implemented in Keras
 
 
@@ -30,7 +29,7 @@ Here are the two examples. The left lane change is classified as safe and the ri
  
  _*This model and weights were originally obtained from [Mask R-CNN implementation by Matterport](https://github.com/matterport/Mask_RCNN)._
    
-PLEASE NOTE: Install in a fresh python 3.6 environment with the above commands. If you use different versions of keras or tensorflow-GPU, the trained models will either not work or give false results!! The trained models will only work with the specific tensorflow-gpu version that I used to train the networks with our data (the data is not open access). I will add CPU models later. If you don't get the results mentioned below, please check the dependencies and compare them to the requirements.txt file.
+PLEASE NOTE: Install in a fresh python 3.6 environment with the above commands. If you use different versions of keras or tensorflow-GPU, the trained models will either not work or give false results!! The trained models will only work with the specific tensorflow-gpu version that I used to train the networks with our data (the data is not open access). If you don't get the results mentioned below, please check the dependencies and compare them to the requirements.txt file.
 
 ## Hardware requirements
 
