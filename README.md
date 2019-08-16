@@ -1,14 +1,13 @@
 # DeepTL-Lane-Change-Classification
-Infers the risk level of lane change video clips. Utilizes deep transfer learning (TL). The related paper is accepted for publication in IEEE ITSC 2019. The preprint of the article is available at https://arxiv.org/abs/1906.02859 
+Infers the risk level of lane change video clips with deep learning. Utilizes deep transfer learning (TL). The related paper is accepted for publication in IEEE ITSC 2019. The preprint of the article is available at https://arxiv.org/abs/1906.02859 
 
 
 ## Features: 
 * A novel deep learning based driving risk assessment framework
+* Implemented in Keras
 * Using only a monocular camera for the task
 * Two versions are available with trained weights! : ResNet50 (TL) + LSTM and MaskRCNN (TL) + CNN + LSTM.
 * Two lane change video samples are provided in data/input/lc_samples_50frames.tar.gz 
-* Implemented in Keras
-
 
 ## Examples:
 
