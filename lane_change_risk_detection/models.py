@@ -28,7 +28,6 @@ class Models:
         self.batch_size = batch_size
         self.name = name
         self.class_weights = class_weights
-
         self.history = []
         self.last_Mpercent_epoch_val_loss = []
         self.m_fold_cross_val_results = []
@@ -190,6 +189,36 @@ class Models:
 
         model.add(GRU(100, return_sequences=False, name="lstm_layer", input_shape=input_shape))
         model.add(Dense(2, activation='softmax', kernel_initializer='ones'))
+
+        model.compile(loss='categorical_crossentropy', optimizer=optimizer)
+
+        self.model = model
+
+    def build_transfer_LSTM_model2(self, input_shape, optimizer=Adam(lr=1e-6, decay=1e-5)):
+
+        model = Sequential()
+
+        model.add(LSTM(512, return_sequences=True, name="lstm_layer", input_shape=input_shape))
+        model.add(LSTM(512, return_sequences=False))
+        model.add(Dropout(0.8))
+        model.add(Dense(1000))
+        model.add(Dropout(0.8))
+        model.add(Dense(200))
+        model.add(Dense(2, activation='softmax'))
+
+        model.compile(loss='categorical_crossentropy', optimizer=optimizer)
+
+        self.model = model
+
+    def build_transfer_LSTM_model3(self, input_shape, optimizer=Adam(lr=1e-6, decay=1e-5)):
+
+        model = Sequential()
+
+        model.add(LSTM(512, return_sequences=True, name="lstm_layer", input_shape=input_shape, dropout=0.5, recurrent_dropout=0.5))
+        model.add(LSTM(512, return_sequences=False))
+        model.add(Dense(1000))
+        model.add(Dense(200))
+        model.add(Dense(2, activation='softmax'))
 
         model.compile(loss='categorical_crossentropy', optimizer=optimizer)
 
