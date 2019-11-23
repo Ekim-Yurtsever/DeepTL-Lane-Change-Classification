@@ -1,5 +1,5 @@
 # DeepTL-Lane-Change-Classification
-Infers the risk level of lane change video clips with deep learning. Utilizes deep transfer learning (TL) and spatiotemporal networks. The related paper is accepted for publication in IEEE ITSC 2019. The preprint of the article is available at https://arxiv.org/abs/1906.02859 
+Infers the risk level of lane change video clips with deep learning. Utilizes deep transfer learning (TL) and spatiotemporal networks. The related paper was presented in IEEE ITSC 2019 and the preprint of the article is available at https://arxiv.org/abs/1906.02859 
 
 
 ## Features: 
