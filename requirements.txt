@@ -39,7 +39,7 @@ scipy==1.1.0
 six==1.12.0
 tensorboard==1.10.0
 tensorflow-estimator==1.14.0
-tensorflow-gpu==1.10.1
+tensorflow-gpu==1.15.0
 termcolor==1.1.0
 tqdm==4.32.2
 traitlets==4.3.2
