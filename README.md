@@ -1,6 +1,19 @@
 # DeepTL-Lane-Change-Classification
-Infers the risk level of lane change video clips with deep learning. Utilizes deep transfer learning (TL) and spatiotemporal networks. The related paper was presented in IEEE ITSC 2019 and the preprint of the article is available at https://arxiv.org/abs/1906.02859 
+Infers the risk level of lane change video clips with deep learning. Utilizes deep transfer learning (TL) and spatiotemporal networks. Please read our paper for details at https://arxiv.org/abs/1906.02859 
 
+If you find the code useful for your research, please consider citing our paper:
+
+        @INPROCEEDINGS{yurtsever2019,
+        author={E. {Yurtsever} and Y. {Liu} and J. {Lambert} and C. {Miyajima} and E. {Takeuchi} and K. {Takeda} and J. H. L. {Hansen}},
+        booktitle={2019 IEEE Intelligent Transportation Systems Conference (ITSC)},
+        title={Risky Action Recognition in Lane Change Video Clips using Deep Spatiotemporal Networks with Segmentation Mask Transfer},
+        year={2019},
+        pages={3100-3107},
+        doi={10.1109/ITSC.2019.8917362},
+        ISSN={null},
+        month={Oct},}
+
+> E. Yurtsever, Y. Liu, J. Lambert, C. Miyajima, E. Takeuchi, K. Takeda,and  J.  H.  L.  Hansen,  “Risky  action  recognition  in  lane  change  video clips  using  deep  spatiotemporal  networks  with  segmentation  mask transfer,” in 2019 IEEE Intelligent Transportation Systems Conference(ITSC), Oct 2019, pp. 3100–3107
 
 ## Features: 
 * A novel deep learning based driving risk assessment framework
