@@ -13,7 +13,7 @@ If you find the code useful for your research, please consider citing our paper:
         ISSN={null},
         month={Oct},}
 
-> E. Yurtsever, Y. Liu, J. Lambert, C. Miyajima, E. Takeuchi, K. Takeda,and  J.  H.  L.  Hansen,  “Risky  action  recognition  in  lane  change  video clips  using  deep  spatiotemporal  networks  with  segmentation  mask transfer,” in 2019 IEEE Intelligent Transportation Systems Conference(ITSC), Oct 2019, pp. 3100–3107
+> E. Yurtsever, Y. Liu, J. Lambert, C. Miyajima, E. Takeuchi, K. Takeda,and  J.  H.  L.  Hansen,  “Risky  action  recognition  in  lane  change  video clips  using  deep  spatiotemporal  networks  with  segmentation  mask transfer,” in 2019 IEEE Intelligent Transportation Systems Conference (ITSC), Oct 2019, pp. 3100–3107
 
 ## Features: 
 * A novel deep learning based driving risk assessment framework
