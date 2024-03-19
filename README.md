@@ -37,7 +37,7 @@ Here are the two examples. The left lane change is classified as safe and the ri
     $cd DeepTL-Lane-Change-Classification/
     $pip install -r requirements.txt
  
- 2- [Only for the MaskRCNN based model] Download MaskRCNN weights* from [https://www.dropbox.com/s/n81pagybkj8p5w1/mask_rcnn_coco.h5?dl=0](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5) and move it to /test . 
+ 2- [Only for the MaskRCNN based model] Download MaskRCNN weights* from [this link](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5) and move it to /test . 
  
  _*This model and weights were originally obtained from [Mask R-CNN implementation by Matterport](https://github.com/matterport/Mask_RCNN)._
    
